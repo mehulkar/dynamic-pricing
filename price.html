@@ -9,14 +9,17 @@
       #outer {margin:0 auto;width:200px;height:200px; background-color: #333333;display: -webkit-box;display: -moz-box; display: -ms-box; display: box;-webkit-box-align: center;-webkit-box-pack: center;}
       #outer h1 {font:inherit;display:block;width: 100px;height: 100px;background-color: #3399FF;}
       #outer h1 {font-size: 36px;line-height: 100px;text-align: center;color: #F3F3F3;}
-      a.button{display:inline-block;height:30px;line-height:30px;padding:5px;background-color:#3399FF;width:50px;border-radius: 5px;margin-top:5px;cursor:pointer;}
+      .button{display:inline-block;height:30px;line-height:30px;padding:5px;background-color:#3399FF;width:50px;border-radius: 5px;margin-top:5px;cursor:pointer;}
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript">
 
       $(document).ready(function() {
+	var counter = +$('#count').text();
         $("#buy").click(function() { 
-          $("#price").text(+$("#price").text() + 100); 
+          $("#price").text(+$("#price").text() + 10); 
+	  counter++;
+	  $('#count').text(counter);
         });
         setInterval(function() { $("#price").text($("#price").text() - 1); }, 1000);
       });
@@ -24,8 +27,9 @@
   </head>
   <body>
   <div id="outer">
-    <h1> $<span id="price">100</span></h1>
+    <h1> $<span id="price">1</span></h1>
   </div>
   <a id="buy" class="button">Buy</a>
+  <span id="count" class="button">0</span>
   </body>
 </html>
