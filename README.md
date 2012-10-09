@@ -1,5 +1,3 @@
-`Note: Hosting on Mochaleaf git for now, just in case this becomes the next $100 billion dollar company`
-
 ### Dynamic Pricing Model
 
 In the real world, prices fluctuated based on simple demand-and-supply economics. A basic Economics 101 class will teach you that this is because of limited supply and unlimited demand. 
