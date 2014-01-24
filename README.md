@@ -7,7 +7,7 @@ This is the beginnings of a script tht will _fake_ limited supply. The idea is t
 #### Usage
 
 ```
-git clone https://github.com/mehulkar/dynamic-pricing.git
+git clone git@github.com:mehulkar/dynamic-pricing.git
 cd dynamic-pricing
 open index.html
 ```
