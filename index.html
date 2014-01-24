@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Centering Content</title>
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
     <style type="text/css">
       body {background-color: #F3F3F3;text-align: center;font-family: 'Open Sans'; font-weight: 300;}
       #outer {margin:0 auto;width:200px;height:200px; background-color: #333333;display: -webkit-box;display: -moz-box; display: -ms-box; display: box;-webkit-box-align: center;-webkit-box-pack: center;}
@@ -11,17 +12,22 @@
       #outer h1 {font-size: 36px;line-height: 100px;text-align: center;color: #F3F3F3;}
       .button{display:inline-block;height:30px;line-height:30px;padding:5px;background-color:#3399FF;width:50px;border-radius: 5px;margin-top:5px;cursor:pointer;}
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript">
 
-      $(document).ready(function() {
-	var counter = +$('#count').text();
-        $("#buy").click(function() { 
-          $("#price").text(+$("#price").text() + 10); 
-	  counter++;
-	  $('#count').text(counter);
-        });
-        setInterval(function() { $("#price").text($("#price").text() - 1); }, 1000);
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded',function() {
+        var count     = document.getElementById('count');
+        var buyButton = document.getElementById('buy');
+        var price     = document.getElementById('price');
+
+
+        buyButton.onclick = function() {
+          price.innerHTML = (+price.innerHTML) + 10;
+          count.innerHTML = (+count.innerHTML) + 1;
+        };
+
+        setInterval(function() {
+          price.innerHTML = price.innerHTML - 1;
+        }, 1000);
       });
     </script>
   </head>
